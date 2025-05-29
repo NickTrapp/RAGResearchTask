@@ -219,12 +219,22 @@ def generate_answer_with_llm(query, context_chunks):
     try:
         client = genai.Client(api_key="AIzaSyDndFoAs7-U_1koyw-nYsnnKM9t9wotGdI")
         prompt = (
-              f"You are a helpful assistant specialized in extracting information from documents."
-              f"Based ONLY on the following CONTEXT, answer the QUESTION."
-              f"If the answer is not explicitly present in the CONTEXT, state clearly that you cannot answer from the provided information.\n\n"
-              f"CONTEXT:\n{context}\n\n"
-              f"QUESTION: {query}\n\n"
-              f"ANSWER:"
+            f"You are an expert research assistant specialized in extracting precise information from provided documents. "
+            f"Your primary goal is to answer the user's QUESTION based **STRICTLY AND ONLY** on the CONTEXT provided. "
+            f"Adhere to the context faithfully; **DO NOT** use any outside knowledge or prior training data. "
+            f"If the answer is not explicitly present or cannot be directly inferred from the CONTEXT, you **MUST** state 'I cannot answer from the provided information.'\n\n"
+
+            f"CONTEXT:\n{context}\n\n"
+            f"QUESTION: {query}\n\n"
+            
+            f"GUIDELINES FOR ANSWERING:\n"
+            f"- Be concise but comprehensive. Provide all relevant details from the context."
+            f"- If the question asks for a list, steps, or stages, provide them in a clear, numbered list format."
+            f"- Avoid conversational filler or apologies; go straight to the answer."
+            f"- If the context contains multiple possible answers or interpretations for the question (e.g., different types of disadvantages), prioritize the most direct and specific one mentioned in the context, or list all relevant ones if that's what the question implies."
+            f"- If numerical values are requested, provide the exact numbers from the text."
+            f"\nANSWER:"
+
         )
 
         response = client.models.generate_content(
@@ -251,7 +261,7 @@ def evaluate_system(qa_pairs, db_collection, embedding_model, llm_function, top_
     for i, qa_pair in enumerate(qa_pairs):
         question = qa_pair['question']
         ground_truth_answer = qa_pair['answer']
-        expected_source_document = qa_pair.get('source_document', 'N/A') # Get source if available
+        expected_source_document = qa_pair.get('expected_source_document', 'N/A') # Get source if available
 
         print(f"\n--- Evaluation Case {i+1}/{len(qa_pairs)} ---")
         print(f"Question: {question}")
@@ -300,76 +310,75 @@ def evaluate_system(qa_pairs, db_collection, embedding_model, llm_function, top_
 
 sample_qa_dataset = [
     {
-        "question": "What are two primary techniques of knowledge injection mentioned in the paper?",
+        "question": "What are two primary techniques of knowledge injection in Large Language Models?",
         "answer": "The two primary techniques of knowledge injection are additional training of the model or fine-tuning, or in-context learning, the most popular version of which is Retrieval Augmented Generation (RAG).",
         "expected_source_document": "2404.07221v2.pdf"
     },
     {
-        "question": "What is a key disadvantage of LLMs that RAG aims to address?",
+        "question": "What is a key disadvantage of Large Language Models that Retrieval Augmented Generation (RAG) aims to address?",
         "answer": "A key disadvantage is the tendency for LLMs to hallucinate information and its lack of knowledge in domain specific areas.",
         "expected_source_document": "2404.07221v2.pdf"
     },
     {
-        "question": "What evaluation metric is defined by the RAGAS framework to assess retrieved chunk quality?",
+        "question": "What evaluation metric is recommended by the RAGAS framework for assessing retrieved chunk quality in unstructured data?",
         "answer": "Context Relevance is defined by the RAGAS framework to assess retrieved chunk quality.",
         "expected_source_document": "2404.07221v2.pdf"
     },
     {
-        "question": "What is the main goal of re-ranking algorithms?",
+        "question": "What is the main purpose of re-ranking algorithms in RAG pipelines?",
         "answer": "Re-ranking algorithms is a method to prioritize the relevance over the similarity of the chunks.",
         "expected_source_document": "2404.07221v2.pdf"
     },
     {
-        "question": "Which benchmark was used for question and answering models in this paper's results?",
+        "question": "What kind of benchmark dataset was used to assess the performance of a RAG model in the context of financial documents?",
         "answer": "The FinanceBench benchmark was used for question and answering models.",
         "expected_source_document": "2404.07221v2.pdf"
     },
     {
-        "question": "What are the three major encoding layers of the unified model?",
-        "answer": "The unified model contains three major encoding layers: the basic encoder, combined encoder and hierarchical encoder.",
-        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
-    },
-    {
-        "question": "On which two datasets were extensive experiments conducted for the unified model?",
-        "answer": "Extensive experiments were conducted on both the English WikiQA dataset and the Chinese dataset (NLPCC2016).",
-        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
-    },
-    {
-        "question": "What does DBQA stand for?",
-        "answer": "DBQA stands for Document-based Question Answering.",
-        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
-    },
-    {
-        "question": "Who is the corresponding author of this paper?",
-        "answer": "The corresponding author of this paper is Yunfang Wu.",
-        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
-    },
-    {
-        "question": "What are the three steps of the human-like reading strategy?",
+        "question": "Describe the human-like reading strategy proposed for Document-based Question Answering (DBQA).",
         "answer": "The detailed reading strategy is as follows: 1. Go over the document quickly to get a general understanding. 2. Read the question carefully equipped with the general understanding. 3. Go back to the document with the prior knowledge of question and get the right answer.",
         "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
     },
     {
-        "question": "What is the primary challenge in medical informatics discussed in the SHTI240567 paper?",
+        "question": "What are the major encoding layers that compose a unified model for DBQA?",
+        "answer": "The unified model contains three major encoding layers: the basic encoder, combined encoder and hierarchical encoder.",
+        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
+    },
+    {
+        "question": "Which two specific datasets were used for extensive experiments to evaluate a unified model for DBQA?",
+        "answer": "Extensive experiments were conducted on both the English WikiQA dataset and the Chinese dataset (NLPCC2016).",
+        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
+    },
+    {
+        "question": "What does DBQA stand for in the context of natural language processing?",
+        "answer": "DBQA stands for Document-based Question Answering.",
+        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
+    },
+    {
+        "question": "What is a key contribution of the unified model based on human-like reading strategy?",
+        "answer": "The unified model proposes a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension, and it combines general understanding of both document and question.",
+        "expected_source_document": "11316-Article Text-14844-1-2-20201228.pdf"
+    },
+    {
+        "question": "What is the primary challenge in medical informatics that involves processing unstructured text data?",
         "answer": "In medical informatics, processing unstructured text data while ensuring data protection and confidentiality is a major challenge.",
         "expected_source_document": "SHTI-316-SHTI240567.pdf"
     },
     {
-        "question": "What is the accuracy of data extraction achieved by the pipeline in the SHTI240567 study?",
+        "question": "What accuracy was achieved by the automated pipeline in data extraction from medical reports in the SHTI240567 study?",
         "answer": "The pipeline demonstrated an accuracy of up to 90% in data extraction.",
         "expected_source_document": "SHTI-316-SHTI240567.pdf"
     },
     {
-        "question": "What are the key stages of the data extraction pipeline described in the SHTI240567 paper?",
+        "question": "Describe the key stages of the data extraction pipeline for German medical documents.",
         "answer": "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use.",
         "expected_source_document": "SHTI-316-SHTI240567.pdf"
     },
     {
-        "question": "What languages are involved in the data translation process of the SHTI240567 pipeline?",
+        "question": "What are the source and target languages for data translation in the medical data extraction pipeline?",
         "answer": "The pipeline translates documents from German to English.",
         "expected_source_document": "SHTI-316-SHTI240567.pdf"
     },
-    # Negative example (unanswerable from any of the provided documents)
     {
         "question": "Who is the current President of the United States?",
         "answer": "I cannot answer from the provided information.",

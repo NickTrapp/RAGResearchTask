@@ -1,268 +1,268 @@
 [
     {
-        "question": "What are two primary techniques of knowledge injection mentioned in the paper?",
+        "question": "What are two primary techniques of knowledge injection in Large Language Models?",
         "ground_truth": "The two primary techniques of knowledge injection are additional training of the model or fine-tuning, or in-context learning, the most popular version of which is Retrieval Augmented Generation (RAG).",
-        "expected_source": "N/A",
+        "expected_source": "2404.07221v2.pdf",
         "retrieved_chunks": [
-            "The two primary techniques of knowledge injection are additional training of the model or fine-tuning, or in-context learning, the most popular version of which is Retrieval Augmented Generation (RAG). 1.1 Fine-tuning Fine-tuning is the process of updating model parameters for specific tasks and domains. Through fine-tuning one can further train a LLM on a domain-specific dataset so that it has access to additional information not present in the original training data.",
             "| This is the case for most domain-specific information, such as financial information and expertise, which is why standard LLMs have poor performance with domainspecific questions. The concept of knowledge injection refers to the ability to give the model access to information beyond its original training data, and the main way we can improve the performance of large language models on domain-specific tasks.",
-            "Fine-Tuning or Retrieval? Comparing Knowledge Injection in LLMs, 2023. arXiv:2312.05934 Antonio Jimeno Yepes, Yao You, Jan Milczek, Sebastian Laverde, and Renyu Liu. Financial Report Chunking for Effective Retrieval Augmented Generation, 2024. Sthanikam Santhosh. How to improve RAG (Retrieval Augmented Generation) performance, 2024. https://medium.com/@sthanikamsanthosh1994/howto-improve-rag-retrieval-augmented-generation-performance-2a42303117f8 Pinecone.",
+            "The two primary techniques of knowledge injection are additional training of the model or fine-tuning, or in-context learning, the most popular version of which is Retrieval Augmented Generation (RAG). 1.1 Fine-tuning Fine-tuning is the process of updating model parameters for specific tasks and domains. Through fine-tuning one can further train a LLM on a domain-specific dataset so that it has access to additional information not present in the original training data.",
+            "The knowledge of LLMs are limited by their training data, and without the use of additional techniques, these models have very poor performance of very domain specific tasks. In order to develop a large language model, the first step is the pre-training process where a transformer is trained on a very large corpus of text data. This data is very general and not specific to a certain domain or field, as well as unchanging with time.",
             "In order t similarity search (such as cosine similarit o find the relevant context, we do a y) between the query embeddings and ?Oded Ovadia, Menachem Brief, Moshik Mishaeli, and Oren Elisha. Fine-Tuning or Retrieval? Comparing Knowledge Injection in LLMs, 2023. jarXiv:2312.05934 Figure 1: Retreival Augmented Generation Architecture the embeddings contained in the knowledge hub. The knowledge hub is created from the set of documents we want to chat with.",
-            "In particular, a key struggle for retrieval algorithms is when the context is across multiple parts in the document, and the model must find and use all these sections in order to formulate an answer. Implementing knowledge graphs could help retrieval systems do this by giving them a specific set of instructions of how to retrieve questions and answer questions depending on the question asked."
+            "Implementing these approaches can substantially improve the retrieval quality, thereby elevating the overall performance and reliability of LLMs in processing and responding to queries. 1 Introduction In recent years, the emergence of Large Language Models (LLMs) represent a critical turning point in Generative AI and its ability to expedite productivity across a variety domains."
         ],
-        "system_answer": "The two primary techniques of knowledge injection are additional training of the model or fine-tuning, or in-context learning, the most popular version of which is Retrieval Augmented Generation (RAG).\n",
+        "system_answer": "The two primary techniques of knowledge injection are:\n1. Additional training of the model or fine-tuning.\n2. In-context learning, the most popular version of which is Retrieval Augmented Generation (RAG).\n",
         "rouge_scores": {
-            "rouge1": 1.0,
-            "rouge2": 1.0,
-            "rougeL": 1.0,
-            "rougeLsum": 1.0
+            "rouge1": 0.9523809523809523,
+            "rouge2": 0.8852459016393444,
+            "rougeL": 0.9523809523809523,
+            "rougeLsum": 0.9523809523809523
         }
     },
     {
-        "question": "What is a key disadvantage of LLMs that RAG aims to address?",
+        "question": "What is a key disadvantage of Large Language Models that Retrieval Augmented Generation (RAG) aims to address?",
         "ground_truth": "A key disadvantage is the tendency for LLMs to hallucinate information and its lack of knowledge in domain specific areas.",
-        "expected_source": "N/A",
+        "expected_source": "2404.07221v2.pdf",
         "retrieved_chunks": [
-            "However, the capabilities of these models, while impressive, are limited in a number of ways that have hindered certain industries from being able to take full advantage of the potential of this technology. A key disadvantage is the tendency for LLMs to hallucinate information and its lack of knowledge in domain specific areas.",
-            "RAG enhances LLMs by sourcing the most relevant text chunk(s) to base queries upon. Despite the significant advancements in LLMs’ response quality in recent years, users may still encounter inaccuracies or irrelevant answers; these issues often stem from suboptimal text chunk retrieval by RAG rather than the inherent capabilities of LLMs. To augment the efficacy of LLMs, it is crucial to refine the RAG process.",
-            "950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2. Methods Our method centers on a local deployed automated pipeline using different OSS-LLMs with RAG architecture to process German medical documents, extract and structure important data, and avoid external data transfer to ensure privacy.",
-            "This dataset provides a comprehensive evaluation of the RAG model’s ability to retrieve and generate accurate answers to financial questions, highlighting LLM’s potential for real-world applications in financial analysis and decision-making. The FinanceBench dataset was tested for the general RAG model called base RAG. In the base case, the RAG model was not given additional context, meaning the model had to retrieve context information on its own.",
-            "So while giving the correct context significantly improves the accuracy of the model, there are still limitation swith the LLM itself, even when using the state of the art generator like GPT-4o, when answering highly complex and domain specific questions. The method with the lowest accuracy was the base rag case, with an average LLM evaluation score of 0.204. The same LLM and prompt template was used for each method, only the way the context was retrieved differed."
+            "However, due to the limited context window of large language models, there is only so much information that can be ch ained to a query, and it is often much shorter than the total amount of knowledge we want to augment the model with. Thus comes in the retrieval aspect of re trieval augmented generation (RAG), in order to decide which chunk of text to add to the input query for questionanswering tasks.",
+            "Retrieval-Augmented Generation for Large Language Models: A Survey, 2024. |arXiv:2312.10997 Spurthi Setty. Rerankertestresultstest.csv, 2024. https://github.com/n78/Anote Henry Toll. Chunkingevaluationresults.csv, 2024. https://github.com/n78/Anote Spurthi Setty, Henry Toll. Queryexpansionresults.csv, 2024. https://github.com/nv78/Anote 14",
+            "2404.07221v2 [cs.IR] 1 Aug 2024 arXiv Improving Retrieval for RAG based Question Answering Models on Financial Documents Spurthi Setty, Harsh Thakkar, Alyssa Lee, Eden Chung, Natan Vidra Abstract The effectiveness of Large Language Models (LLMs) in generating accurate responses relies heavily on the quality of input provided, particularly when employing Retrieval Augmented Generation (RAG) techniques. RAG enhances LLMs by sourcing the most relevant text chunk(s) to base queries upon.",
+            "1Shahul Es, Jithin James, Luis Espinosa-Anke, Steven Schockaert. RAGAS: Automated Evaluation of Retrieval Augmented Generation, 2023. arXiv:2309.15217 1.2 Retrieval Augmented Generation Retrieval Augmented Generation is a method of in-context learning that allows Large Language Models to have access to new knowledge sources and answer questions. In context learning is a method of knowledge injection where one improves pre-trained LLMs by chaining t edge.",
+            "We use standard metrics including BLEU and Rouge-L Score, as well as cosine similarity. However, these scores are not ideal for comparing the semantic meaning of two 12Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Qianyu Guo, Meng Wang, and Haofen Wang. Retrieval-Augmented Generation for Large Language Models: A Survey, 2024. |arXi 2.10997 13Shahul Es, Jithin James, Luis Espinosa-Anke, Steven Schockaert."
         ],
-        "system_answer": "A key disadvantage of LLMs that RAG aims to address is their tendency to hallucinate information and their lack of knowledge in domain-specific areas.\n",
+        "system_answer": "Due to the limited context window of large language models, there is only so much information that can be chained to a query, and it is often much shorter than the total amount of knowledge we want to augment the model with.\n",
         "rouge_scores": {
-            "rouge1": 0.7555555555555556,
-            "rouge2": 0.5116279069767442,
-            "rougeL": 0.7111111111111111,
-            "rougeLsum": 0.7111111111111111
+            "rouge1": 0.25806451612903225,
+            "rouge2": 0.03333333333333333,
+            "rougeL": 0.16129032258064516,
+            "rougeLsum": 0.16129032258064516
         }
     },
     {
-        "question": "What evaluation metric is defined by the RAGAS framework to assess retrieved chunk quality?",
+        "question": "What evaluation metric is recommended by the RAGAS framework for assessing retrieved chunk quality in unstructured data?",
         "ground_truth": "Context Relevance is defined by the RAGAS framework to assess retrieved chunk quality.",
-        "expected_source": "N/A",
+        "expected_source": "2404.07221v2.pdf",
         "retrieved_chunks": [
-            "How to improve RAG (Retrieval Augmented Generation) performance, 2024. https://medium.com/@sthanikamsanthosh1994/how-to-improve-rag-retrievalaugmented-generation-performance-2a42303117{8 a other extreme, too much irrelevant and unneeded information included in each chunk. When choosing a fixed chunk size, as most RAG pipelines do, it runs the risk of including too much or too little information for each query asked.",
-            "There are some initial results for testing different chunking techniques, however because of compute limitations as well 10 as it exceeding the token limit of the model, we could not get a comprehensive metric of the whole dataset and therefore cannot compare it directly with the other methods. The preliminary results for those chunking methods will be available in the github repository for anyone interesting in seeing the initial results and code.",
-            "Even if these algorithms retrieve the top 5 - 10 chunks, these are not necessarily the current location of the most relevant sections that a human analyst, would know to look. The second key concern is that current RAG pipelines assume that similarity equivalence to relevance while this is not correct. The final concern is that current RAG pipelines chunk things in uniform sections that disregard document structures can can leave certain parts incomplete.",
             "For unstructured data, we can evaluate the retrieved chunk using Context Relevance, as defined by the RAGAS Framework. [For this metric, an LLM is asked to count the number of sentences from the context that are relevant to answering the question. The ratio of the number of extracted sentences to the total number of sentences in the context is defined as the context relevance score.",
+            "There are some initial results for testing different chunking techniques, however because of compute limitations as well 10 as it exceeding the token limit of the model, we could not get a comprehensive metric of the whole dataset and therefore cannot compare it directly with the other methods. The preliminary results for those chunking methods will be available in the github repository for anyone interesting in seeing the initial results and code.",
+            "How to improve RAG (Retrieval Augmented Generation) performance, 2024. https://medium.com/@sthanikamsanthosh1994/how-to-improve-rag-retrievalaugmented-generation-performance-2a42303117{8 a other extreme, too much irrelevant and unneeded information included in each chunk. When choosing a fixed chunk size, as most RAG pipelines do, it runs the risk of including too much or too little information for each query asked.",
+            "3.1 Retrieval Quality The primary way to test the retrieval quality with structured data is with pagelevel and paragraph-level accuracy. Since in the data, we have access to the entire document and the section a human analyst referred to, we compare that section to the chunks returned by the retrieval algorithm. If both the reference context and algorithm context are on the same page, it will have a high retrieval accuracy, a similar idea for paragraph-level accuracy.",
             "|*} Each chunk is made up of the same number of words or tokens and perhaps some overlap between chunks for context. The retriever will usually return the top k most similar chunks, and each chunk will be of roughly equal size. However, this approach does not account for the nature of the document at all and can lead to critical oversight and information loss in certain situations."
         ],
-        "system_answer": "Context Relevance is defined by the RAGAS Framework to assess retrieved chunk quality.\n",
+        "system_answer": "The RAGAS Framework recommends using Context Relevance to evaluate the retrieved chunk quality in unstructured data. For this metric, an LLM counts the number of sentences from the context that are relevant to answering the question. The context relevance score is the ratio of the number of extracted sentences to the total number of sentences in the context.\n",
         "rouge_scores": {
-            "rouge1": 1.0,
-            "rouge2": 1.0,
-            "rougeL": 1.0,
-            "rougeLsum": 1.0
+            "rouge1": 0.28169014084507044,
+            "rouge2": 0.14492753623188404,
+            "rougeL": 0.19718309859154928,
+            "rougeLsum": 0.19718309859154928
         }
     },
     {
-        "question": "What is the main goal of re-ranking algorithms?",
+        "question": "What is the main purpose of re-ranking algorithms in RAG pipelines?",
         "ground_truth": "Re-ranking algorithms is a method to prioritize the relevance over the similarity of the chunks.",
-        "expected_source": "N/A",
+        "expected_source": "2404.07221v2.pdf",
         "retrieved_chunks": [
             "Re-ranking algorithms is a method to prioritize the relevance over the similarity of the chunks. Essentially, a method like cosine similarity might rank the top 10 chunks, but a separate algorithm will re-rank the algorithms to be based on relevance, and then the top one or two chunks after the re-ranking will be augmented as context to the input query.",
-            "Generally, the top 1 or 2 chunks are included as context, and these are the best results given a cosine similarity or k-nearest neighbors search. However, such algorithms will give the most similar chunks, which might not correspond to the most relevant chunks for context. Re-ranking algorithms is a method to prioritize the relevance over the similarity of the chunks.",
-            "Cohere’s re-ranking algorithm is a popular one and it along with others uses additional machine learning and natural language processing techniques to further evaluate relevance beyond a similarity search. In this paper we utilized a cross-encoder model to score how relevant each retreived chunk was to the question and re ranked the chunks based off the scores. The nature of the architecture suggests that cross encoder models have higher accuracy than bi-encoder models for this specific use case.",
-            "In this 10Akash Mathur. Advanced RAG: Optimizing Retrieval with Additional Context Metadata using LlamaIndex, 2024. https://akash-mathur.medium.com/advanced-rag-optimizingretrieval-with-additional-context-metadata-using-llamaindex-aeaa32d7aa2f 11Cohere. Rerank, 2024. https://cohere.com/rerank paper, we are focusing on zero-shot methods to improve retrieval that require no additional training data.",
-            "Since it is usually just a similarity search based on the original question, the algorithm would not go through the same logical steps a human would in order to find the relevant section. For example, if you ask a financial analyst to calculate metric x, they would go through a multi-step reasoning process of knowing how to calculate the metrics and knowing where in the document that information is contained."
+            "While each metric alone cannot provide a complete overview, all together they give a sense of performance of the system, with and without the availability of structured data. While the techniques explored in this paper address certain key limitations in current RAG pipelines, there are for other areas in which more could be done to improve performance.",
+            "In order to to achieve that goal, other techniques, perhaps those that require some additional training or fine tuning of some sorts can be utilized. 5 Impact In this experiment, we aim to address the key limitations of current RAG pipelines, some of these concerns have specific techniques to address them, while other are more difficult to resolve. As research in this field continues, more ideas will emerge to make these system more accurate and robust.",
+            "Even if these algorithms retrieve the top 5 - 10 chunks, these are not necessarily the current location of the most relevant sections that a human analyst, would know to look. The second key concern is that current RAG pipelines assume that similarity equivalence to relevance while this is not correct. The final concern is that current RAG pipelines chunk things in uniform sections that disregard document structures can can leave certain parts incomplete.",
+            "To augment the efficacy of LLMs, it is crucial to refine the RAG process. This paper explores the existing constraints of RAG pipelines and introduces methodologies for enhancing text retrieval. It delves into strategies such as sophisticated chunking techniques, query expansion, the incorporation of metadata annotations, the application of re-ranking algorithms, and the fine-tuning of embedding algorithms."
         ],
-        "system_answer": "The main goal of re-ranking algorithms is to prioritize the relevance over the similarity of the chunks.\n",
+        "system_answer": "The main purpose of re-ranking algorithms is to prioritize the relevance over the similarity of the chunks in RAG pipelines. Cosine similarity might rank the top 10 chunks, but a separate algorithm will re-rank the algorithms to be based on relevance, and then the top one or two chunks after the re-ranking will be augmented as context to the input query.\n",
         "rouge_scores": {
-            "rouge1": 0.823529411764706,
-            "rouge2": 0.7500000000000001,
-            "rougeL": 0.823529411764706,
-            "rougeLsum": 0.823529411764706
+            "rouge1": 0.375,
+            "rouge2": 0.3076923076923077,
+            "rougeL": 0.35,
+            "rougeLsum": 0.35
         }
     },
     {
-        "question": "Which benchmark was used for question and answering models in this paper's results?",
+        "question": "What kind of benchmark dataset was used to assess the performance of a RAG model in the context of financial documents?",
         "ground_truth": "The FinanceBench benchmark was used for question and answering models.",
-        "expected_source": "N/A",
+        "expected_source": "2404.07221v2.pdf",
         "retrieved_chunks": [
+            "This dataset provides a comprehensive evaluation of the RAG model’s ability to retrieve and generate accurate answers to financial questions, highlighting LLM’s potential for real-world applications in financial analysis and decision-making. The FinanceBench dataset was tested for the general RAG model called base RAG. In the base case, the RAG model was not given additional context, meaning the model had to retrieve context information on its own.",
+            "We focused on use cases for RAG systems in the financial domain, primarily question-answering on 10-K documents. However, the same concept are applicable across industries and applications in healthcare, and legal tech, as it provides a systemic framework to improve RAG pipelines for domain specific tasks. We also employ a variety of evaluation metrics to show that these enhanced rag techniques overcame some of the limitations.",
             "4 Results To assess the performance of a model with RAG, we utilized the FinanceBench benchmark for question and answering models developed by Patronus AI. This benchmark consists of 10,231 questions about publicly traded companies in the USA, covering a range of financial documents such as 10Ks, 10Qs, 8Ks, and Earnings Reports released between 2015 and 2023.",
-            "This score penalizes redundant information and rewards chunks that have a majority of sentences that provide useful information to answer the question. 3.2 Answer Accuracy For structured evaluation of question-answering, we evaluate the accuracy of the model’s answer to the ground truth answers from the dataset. We use standard metrics including BLEU and Rouge-L Score, as well as cosine similarity.",
-            "In order to validate our model’s generality, we use two open datasets to evaluate the performance. The first is English WikiQA (Yang, Yih, and Meek 2015), which is collected and annotated for research on open-domain question answering; the other is the Chinese DBQA task from NLPCC-ICCPOL 2016 Shared Task (Duan 2016), which is annotated by human annotators. WikiQA has a natural title for each document, but the Chinese DBQA doesn’t have.",
-            "6 Conclusion and Next Steps By improving the performance of retrieval we improve the quality of the entire system for document based question-answering tasks. Through retrieving the right chunk, we not only provide better citations, but from there we can also provide better answers to questions. Such underscores the importance of robust retrieval algorithms, as without the right context, even the best generators will give incorrect answers.",
-            "On the Chinese DBQA dataset, our model gets comparable results without using any features. Related Work Reading documents and being able to answer related questions by machines is a useful and meaningful issue. However, it is still an unsolved challenge. DBQA has several different answer types, as outlined in Table 1. Our work mainly focuses on the form in which answer is a whole sentence. As we know, many NLP problems involve matching two or more sequences to make a decision."
+            "However future work will investigate how additional annotations/data can possible improve RAG via fine tuning embedding algorithms. | 3 Evaluation When it comes to evaluating RAG systems, the two main components are evaluating the model’s ability to retrieve context as well as its ability to answer questions based on the context. In the datasets, we have access to ground truth context and answers developed by human financial analysts.",
+            "While each metric alone cannot provide a complete overview, all together they give a sense of performance of the system, with and without the availability of structured data. While the techniques explored in this paper address certain key limitations in current RAG pipelines, there are for other areas in which more could be done to improve performance."
         ],
-        "system_answer": "FinanceBench benchmark was used for question and answering models in this paper's results.\n",
+        "system_answer": "The FinanceBench benchmark was used to assess the performance of a RAG model. It consists of 10,231 questions about publicly traded companies in the USA, covering a range of financial documents such as 10Ks, 10Qs, 8Ks, and Earnings Reports released between 2015 and 2023.\n",
         "rouge_scores": {
-            "rouge1": 0.75,
-            "rouge2": 0.7272727272727274,
-            "rougeL": 0.75,
-            "rougeLsum": 0.75
+            "rouge1": 0.2181818181818182,
+            "rouge2": 0.1509433962264151,
+            "rougeL": 0.2181818181818182,
+            "rougeLsum": 0.2181818181818182
         }
     },
     {
-        "question": "What are the three major encoding layers of the unified model?",
+        "question": "Describe the human-like reading strategy proposed for Document-based Question Answering (DBQA).",
+        "ground_truth": "The detailed reading strategy is as follows: 1. Go over the document quickly to get a general understanding. 2. Read the question carefully equipped with the general understanding. 3. Go back to the document with the prior knowledge of question and get the right answer.",
+        "expected_source": "11316-Article Text-14844-1-2-20201228.pdf",
+        "retrieved_chunks": [
+            "Our contributions in this paper can be summarized as follows: We propose a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension. Based on the reading strategy, we make a good combination of general understanding of both document and question.",
+            "The Thirty-Second AAAI Conference on Artificial Intelligence (AAAI-18) A Unified Model for Document-Based Question Answering Based on Human-Like Reading Strategy Weikang Li, Wei Li, Yunfang Wu* Key Laboratory of Computational Linguistics, Peking University, MOE, China {wavejkd,liweitj47,wuyf} @pku.edu.cn Abstract Document-based Question Answering (DBQA) in Natural Language Processing (NLP) is important but difficult because of the long document and the complex question.",
+            "Introduction Document-based Question Answering (DBQA) is an important issue in natural language processing(NLP). Given a document and a question related to the document, the system is required to give an answer for the question. The answer could be a word, a text span or a sentence extracted from the document. Table 1 gives an example of DBQA. Recently, more and more researches have focused on this challenging problem.",
+            "Attempts have also been made to study how people read. Masson (1983) conducted studies on how people answer questions by first skimming the document, identifying relevant parts, and carefully reading these parts to obtain an answer. Inspired by this observation, Golub et al. (2017) proposed a coarse-to-fine model for question answering. It first selects relevant sentences and then generates an answer.",
+            "All rights reserved. 604 sentences from document as document summary for the answer selection task. However, the simple transfer between deep learning and DBQA is not so logical. In our opinion, DBQA is similar to the reading comprehension test, which is defined to test people’s comprehension of a document. In their school years, students would do lots of reading comprehension tests. In this paper, we provide a solution for the problem to stimulate men’s reading strategy of doing the tests."
+        ],
+        "system_answer": "The human-like reading strategy proposed for DBQA is similar to the logic of students when they do reading comprehension tests. This strategy involves a good combination of general understanding of both document and question. It is also inspired by how people answer questions by first skimming the document, identifying relevant parts, and carefully reading these parts to obtain an answer.\n",
+        "rouge_scores": {
+            "rouge1": 0.33962264150943394,
+            "rouge2": 0.07692307692307691,
+            "rougeL": 0.24528301886792447,
+            "rougeLsum": 0.24528301886792447
+        }
+    },
+    {
+        "question": "What are the major encoding layers that compose a unified model for DBQA?",
         "ground_truth": "The unified model contains three major encoding layers: the basic encoder, combined encoder and hierarchical encoder.",
-        "expected_source": "N/A",
+        "expected_source": "11316-Article Text-14844-1-2-20201228.pdf",
         "retrieved_chunks": [
             "The unified model contains three major encoding layers that are consistent to different steps of the reading strategy, including the basic encoder, combined encoder and hierarchical encoder. We conduct extensive experiments on both the English WikiQA dataset and the Chinese dataset, and the experimental results show that our unified model is effective and yields state-of-the-art results on WikiQA dataset.",
-            "Unified Model Based on the reading strategy of humans, we propose a unified model composed of the basic encoder, combined encoder and hierarchical encoder for the DBQA task, as shown in Figure 1. Let gq denotes the question, t denotes the summary of the document and s denotes a sentence in the document. Firstly, we use the basic encoder to get vectors (vf, uf, vt and v}, vi, v{,) respectively based on their word embeddings (wi, wi, wi and wi, wi, wi).",
-            "Considering the meaning of Chinese characters, we make a combination of Chinese character embeddings and word embeddings in our model, which is the only difference between the English and Chinese models. Our model obtains a MAP of 84.43%, which outperforms the re-implemented C_A-Network by 3.7 MAP points.",
             "2015). CubeCNN: this model builds a CNN on all pairs of word similarities (He and Lin 2016). As for the Chinese DBQA dataset, we implemented a model C'A-Network based on the compare-aggregate network (Wang and Jiang 2016), in which we made a combination of Chinese character embeddings and word embeddings.",
-            "For other baselines, we simply take the performance reported in the original paper, and they are: CNN-Overlap: it is the work of Fu, Qiu, and Huang (2016), which builds a CNN network by incorporating word overlap features. It is the best system at the shared task of NLPCC-ICCPOL 2016. Hybrid-Way: it is the work of Wu et al. (2016), which is based on feature engineering. It is the second best system at the campaign. Settings The proposed models were implemented with TensorFlow (Abadi et al."
+            "Unified Model Based on the reading strategy of humans, we propose a unified model composed of the basic encoder, combined encoder and hierarchical encoder for the DBQA task, as shown in Figure 1. Let gq denotes the question, t denotes the summary of the document and s denotes a sentence in the document. Firstly, we use the basic encoder to get vectors (vf, uf, vt and v}, vi, v{,) respectively based on their word embeddings (wi, wi, wi and wi, wi, wi).",
+            "On the Chinese DBQA dataset, our model gets comparable results without using any features. Related Work Reading documents and being able to answer related questions by machines is a useful and meaningful issue. However, it is still an unsolved challenge. DBQA has several different answer types, as outlined in Table 1. Our work mainly focuses on the form in which answer is a whole sentence. As we know, many NLP problems involve matching two or more sequences to make a decision.",
+            "Also, extensive experiments conducted on the open DBQA data demonstrate that our model significantly improves the basic system and helps us get state-of-the-art results. Approach Overview We propose a human-like reading strategy to tackle the DBQA problem, which could be conducted via the neural network. In this section, we firstly make a formalized definition of DBQA; then we detail our reading strategy and explain why it is logical and reasonable in this problem."
         ],
-        "system_answer": "The three major encoding layers of the unified model are the basic encoder, combined encoder, and hierarchical encoder.\n",
-        "rouge_scores": {
-            "rouge1": 0.8823529411764706,
-            "rouge2": 0.7500000000000001,
-            "rougeL": 0.7647058823529411,
-            "rougeLsum": 0.7647058823529411
-        }
-    },
-    {
-        "question": "On which two datasets were extensive experiments conducted for the unified model?",
-        "ground_truth": "Extensive experiments were conducted on both the English WikiQA dataset and the Chinese dataset (NLPCC2016).",
-        "expected_source": "N/A",
-        "retrieved_chunks": [
-            "Settings The proposed models were implemented with TensorFlow (Abadi et al. 2016), and all experiments were conducted in a GPU cluster. We used the metric of accuracy on the development set to select the best epoch and best hyper-parameters and then applied them to the test data. We used the English and Chinese Wikipedia corpus to train the LDA and LSA models separately for two languages via Gensim |, \"A python package, https://pypi.python.org/pypi/gensim.",
-            "We will describe the details of datasets, settings, results and analysis in our experiments. Datasets There are lots of datasets for reading comprehension and DBQA task. Our work focuses on choosing a sentence as the answer of a question. In order to validate our model’s generality, we use two open datasets to evaluate the performance.",
-            "The unified model contains three major encoding layers that are consistent to different steps of the reading strategy, including the basic encoder, combined encoder and hierarchical encoder. We conduct extensive experiments on both the English WikiQA dataset and the Chinese dataset, and the experimental results show that our unified model is effective and yields state-of-the-art results on WikiQA dataset.",
-            "In order to validate our model’s generality, we use two open datasets to evaluate the performance. The first is English WikiQA (Yang, Yih, and Meek 2015), which is collected and annotated for research on open-domain question answering; the other is the Chinese DBQA task from NLPCC-ICCPOL 2016 Shared Task (Duan 2016), which is annotated by human annotators. WikiQA has a natural title for each document, but the Chinese DBQA doesn’t have.",
-            "Baselines As for WikiQA dataset, we re-implemented C_A-Network proposed by Wang and Jiang (2016) as our baseline. We do not implement other baseline models but simply take the reported performance in the original paper. IARNN-Occam: this model adds regularization on the attention weights (Wang, Liu, and Zhao 2016)."
-        ],
-        "system_answer": "Extensive experiments on the unified model were conducted on both the English WikiQA dataset and the Chinese dataset.\n",
+        "system_answer": "The unified model contains three major encoding layers:\n1. Basic encoder\n2. Combined encoder\n3. Hierarchical encoder\n",
         "rouge_scores": {
             "rouge1": 0.8484848484848485,
-            "rouge2": 0.7741935483870968,
+            "rouge2": 0.6451612903225806,
             "rougeL": 0.8484848484848485,
-            "rougeLsum": 0.8484848484848485
+            "rougeLsum": 0.7272727272727272
         }
     },
     {
-        "question": "What does DBQA stand for?",
-        "ground_truth": "DBQA stands for Document-based Question Answering.",
-        "expected_source": "N/A",
+        "question": "Which two specific datasets were used for extensive experiments to evaluate a unified model for DBQA?",
+        "ground_truth": "Extensive experiments were conducted on both the English WikiQA dataset and the Chinese dataset (NLPCC2016).",
+        "expected_source": "11316-Article Text-14844-1-2-20201228.pdf",
         "retrieved_chunks": [
             "WikiQA has a natural title for each document, but the Chinese DBQA doesn’t have. Table 3 gives the description of the two datasets; Table 4 and 5 list the statistics distribution. In WikiQA, there are some questions which have no answer, we removed these questions and only kept questions that have answers. As for NLPCC2016, there is no development set, and so we divided 20% of the training set as our development data and the rest as our training data.",
-            "Introduction Document-based Question Answering (DBQA) is an important issue in natural language processing(NLP). Given a document and a question related to the document, the system is required to give an answer for the question. The answer could be a word, a text span or a sentence extracted from the document. Table 1 gives an example of DBQA. Recently, more and more researches have focused on this challenging problem.",
+            "On the Chinese DBQA dataset, our model gets comparable results without using any features. Related Work Reading documents and being able to answer related questions by machines is a useful and meaningful issue. However, it is still an unsolved challenge. DBQA has several different answer types, as outlined in Table 1. Our work mainly focuses on the form in which answer is a whole sentence. As we know, many NLP problems involve matching two or more sequences to make a decision.",
+            "In order to validate our model’s generality, we use two open datasets to evaluate the performance. The first is English WikiQA (Yang, Yih, and Meek 2015), which is collected and annotated for research on open-domain question answering; the other is the Chinese DBQA task from NLPCC-ICCPOL 2016 Shared Task (Duan 2016), which is annotated by human annotators. WikiQA has a natural title for each document, but the Chinese DBQA doesn’t have.",
             "Also, extensive experiments conducted on the open DBQA data demonstrate that our model significantly improves the basic system and helps us get state-of-the-art results. Approach Overview We propose a human-like reading strategy to tackle the DBQA problem, which could be conducted via the neural network. In this section, we firstly make a formalized definition of DBQA; then we detail our reading strategy and explain why it is logical and reasonable in this problem.",
-            "All rights reserved. 604 sentences from document as document summary for the answer selection task. However, the simple transfer between deep learning and DBQA is not so logical. In our opinion, DBQA is similar to the reading comprehension test, which is defined to test people’s comprehension of a document. In their school years, students would do lots of reading comprehension tests. In this paper, we provide a solution for the problem to stimulate men’s reading strategy of doing the tests.",
-            "On the Chinese DBQA dataset, our model gets comparable results without using any features. Related Work Reading documents and being able to answer related questions by machines is a useful and meaningful issue. However, it is still an unsolved challenge. DBQA has several different answer types, as outlined in Table 1. Our work mainly focuses on the form in which answer is a whole sentence. As we know, many NLP problems involve matching two or more sequences to make a decision."
+            "We will describe the details of datasets, settings, results and analysis in our experiments. Datasets There are lots of datasets for reading comprehension and DBQA task. Our work focuses on choosing a sentence as the answer of a question. In order to validate our model’s generality, we use two open datasets to evaluate the performance."
         ],
-        "system_answer": "Document-based Question Answering\n",
+        "system_answer": "The two datasets used for extensive experiments to evaluate the model's generality are:\n\n1.  English WikiQA (Yang, Yih, and Meek 2015)\n2.  Chinese DBQA task from NLPCC-ICCPOL 2016 Shared Task (Duan 2016)\n",
         "rouge_scores": {
-            "rouge1": 0.7272727272727273,
-            "rouge2": 0.6666666666666666,
-            "rougeL": 0.7272727272727273,
-            "rougeLsum": 0.7272727272727273
+            "rouge1": 0.326530612244898,
+            "rouge2": 0.0851063829787234,
+            "rougeL": 0.28571428571428564,
+            "rougeLsum": 0.28571428571428564
         }
     },
     {
-        "question": "Who is the corresponding author of this paper?",
-        "ground_truth": "The corresponding author of this paper is Yunfang Wu.",
-        "expected_source": "N/A",
+        "question": "What does DBQA stand for in the context of natural language processing?",
+        "ground_truth": "DBQA stands for Document-based Question Answering.",
+        "expected_source": "11316-Article Text-14844-1-2-20201228.pdf",
         "retrieved_chunks": [
-            "Answer(Word) national personification. Table 1: An Outline of DBQA We propose a unified neural network model which is suitable for our reading strategy to tackle the problem of DBQA. We conduct experiments on the English WikiQA dataset (Yang, Yih, and Meek 2015) and the Chinese DBQA dataset (Duan 2016). On the WikiQA dataset, our model obtains a MAP of 0.754, which outperforms the best previous method by 1.1 MAP points.",
-            "2014. Convolutional neural network architectures for matching natural language sentences. In Advances in neural information processing systems, 2042-2050. Kingma, D., and Ba, J. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv: 1412.6980. Lu, Z., and Li, H. 2013. A deep architecture for matching short texts. In Advances in Neural Information Processing Systems, 1367-1375. Luhn, H. P. 1958. The automatic creation of literature abstracts.",
-            "t(d) = documentya, (3) where documentyq) is the last sentence of a document. t(d) = LDA(document) (4) where LD A(document) means using the pre-trained LDA model to get the topic of a document. t(d) = LS A(document) (5) where L.SA(document) means using the pre-trained LSA model to get the topic of a document.",
-            "Thus in the second step, we incorporate the hidden representation of the title into the question, posing a limitation to the understanding of g and making the meaning more close to the document. We explore several methods including deep learning models and simple computations to combine both information. Thirdly, a document usually consists of many sentences, but the traditional single RNN could not capture the dependencies between sentences.",
-            "As for the document without title, we make many attempts to get the general understanding of the document, by using the first sentence, the last sentence and training a LDA or LSA model to get the topic of a document. In addition, we have tried many ways to understand questions well given the general understanding of the document. At the end, we propose a unified neural network model according to the human-like reading strategy above."
+            "Introduction Document-based Question Answering (DBQA) is an important issue in natural language processing(NLP). Given a document and a question related to the document, the system is required to give an answer for the question. The answer could be a word, a text span or a sentence extracted from the document. Table 1 gives an example of DBQA. Recently, more and more researches have focused on this challenging problem.",
+            "On the Chinese DBQA dataset, our model gets comparable results without using any features. Related Work Reading documents and being able to answer related questions by machines is a useful and meaningful issue. However, it is still an unsolved challenge. DBQA has several different answer types, as outlined in Table 1. Our work mainly focuses on the form in which answer is a whole sentence. As we know, many NLP problems involve matching two or more sequences to make a decision.",
+            "2015), recurrent neural network (RNN) (Tan et al. 2015), Attention-Way (Seo et al. 2016) and generative adversarial networks (GAN) (Wang et al. 2017). Many other ways have emerged to dig out more information to solve the problem of DBQA. Document summary could also be seen as an effective information in many NLP tasks. Choi et al. (2017) and Miller et al. (2016) used the most related Copyright © 2018, Association for the Advancement of Artificial Intelligence (www.aaai.org). All rights reserved.",
+            "Also, extensive experiments conducted on the open DBQA data demonstrate that our model significantly improves the basic system and helps us get state-of-the-art results. Approach Overview We propose a human-like reading strategy to tackle the DBQA problem, which could be conducted via the neural network. In this section, we firstly make a formalized definition of DBQA; then we detail our reading strategy and explain why it is logical and reasonable in this problem.",
+            "Our contributions in this paper can be summarized as follows: We propose a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension. Based on the reading strategy, we make a good combination of general understanding of both document and question."
         ],
-        "system_answer": "I cannot answer the question based on the context provided.\n",
+        "system_answer": "DBQA stands for Document-based Question Answering in the context of natural language processing (NLP).\n",
         "rouge_scores": {
-            "rouge1": 0.10526315789473685,
-            "rouge2": 0.0,
-            "rougeL": 0.10526315789473685,
-            "rougeLsum": 0.10526315789473685
+            "rouge1": 0.6363636363636364,
+            "rouge2": 0.6,
+            "rougeL": 0.6363636363636364,
+            "rougeLsum": 0.6363636363636364
         }
     },
     {
-        "question": "What are the three steps of the human-like reading strategy?",
-        "ground_truth": "The detailed reading strategy is as follows: 1. Go over the document quickly to get a general understanding. 2. Read the question carefully equipped with the general understanding. 3. Go back to the document with the prior knowledge of question and get the right answer.",
-        "expected_source": "N/A",
+        "question": "What is a key contribution of the unified model based on human-like reading strategy?",
+        "ground_truth": "The unified model proposes a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension, and it combines general understanding of both document and question.",
+        "expected_source": "11316-Article Text-14844-1-2-20201228.pdf",
         "retrieved_chunks": [
-            "With the assumption, the detailed reading strategy is as follow: 1. Go over the document quickly to get a general understanding of the document; 2. Read the question carefully equipped with the general understanding of the document; 3. Go back to the document with the prior knowledge of question and get the right answer. Such a reading strategy could be implemented by neural network models.",
-            "Our contributions in this paper can be summarized as follows: We propose a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension. Based on the reading strategy, we make a good combination of general understanding of both document and question.",
             "The experimental results verify the effectiveness of our proposed method in both English and Chinese datasets. In the WikiQA data, our model outperforms the previous state of the art results by 1.1 MAP points. However, we still haven’t fully dug out the strategies or skills about how people do reading comprehension tests. In the future, we would like to explore more about people’s reading strategy to improve our model and test its effectiveness on other tasks.",
-            "Attempts have also been made to study how people read. Masson (1983) conducted studies on how people answer questions by first skimming the document, identifying relevant parts, and carefully reading these parts to obtain an answer. Inspired by this observation, Golub et al. (2017) proposed a coarse-to-fine model for question answering. It first selects relevant sentences and then generates an answer.",
-            "The most popular methods are cosine similarity (Tan et al. 2016), element-wise product (Seo et al. 2016) and tensor computation (Bowman et al. 2015). As a task to train people’s reading and understanding skills, DBQA is more complex, logical and skillful than a simple comparison of the similarity between two sentences. We will imitate people’s reading strategy of doing reading comprehension tests via the neural network. Attempts have also been made to study how people read."
-        ],
-        "system_answer": "The three steps of the human-like reading strategy are:\n\n1.  Go over the document quickly to get a general understanding of the document.\n2.  Read the question carefully equipped with the general understanding of the document.\n3.  Go back to the document with the prior knowledge of question and get the right answer.\n",
-        "rouge_scores": {
-            "rouge1": 0.8282828282828282,
-            "rouge2": 0.7422680412371134,
-            "rougeL": 0.8282828282828282,
-            "rougeLsum": 0.8282828282828282
-        }
-    },
-    {
-        "question": "What is the primary challenge in medical informatics discussed in the SHTI240567 paper?",
-        "ground_truth": "In medical informatics, processing unstructured text data while ensuring data protection and confidentiality is a major challenge.",
-        "expected_source": "N/A",
-        "retrieved_chunks": [
-            "Digital Health and Informatics Innovations for Sustainable Health Care Systems 949 J. Mantas et al. (Eds.) © 2024 The Authors. This article is published online with Open Access by IOS Press and distributed under the terms of the Creative Commons Attribution Non-Commercial License 4.0 (CC BY-NC 4.0).",
-            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
-            "Knowl Inf Syst. 2023;65(2):463-516. doi: 10.1007/s10115-022-01779-1. [2] Wang C., Ong J., Wang C., Ong H., Cheng R., Ong D. Potential for GPT Technology to Optimize Future Clinical Decision-Making Using Retrieval-Augmented Generation. Ann Biomed Eng. 2023 Aug 2. doi: 10.1007/s10439-023-03327-6.",
-            "| start of the pandemic. J /X higher level of depressive... ; / eizto| BS ABS IBS o \\ | we passage in Koroan to answer the ) sooet a Fe} LiEHIC} NY S248 Vee ApiE se ‘question indetal G/M AD Aotet 1428 HO (tte ed 8B ABsE7 ———~ saws ABS 2 Ase. [instruction query [| generated document real document 2.3 Metadata Annotations and Indexing When interacting with several different documents, there might be key data points within the metadata that standard retrieval algorithms completely miss out on.",
-            "3. Results We evaluated real life private datasets of 800 unstructured medical reports to assess effectiveness of the pipeline. Figure 1 displays initial results for weight and age. A : B. Figure 1. Residual analyses for weight (A) and age (B) extraction from German medical reports. Y-axis displays the expected values, and X-axis shows the automatically extracted information from the texts. 4."
-        ],
-        "system_answer": "Based on the context provided, the primary challenge discussed is the effective extraction and structuring of data from medical documents, as a step forward in health informatics. The paper aims to showcase the effectiveness of an automated pipeline in addressing this challenge.\n",
-        "rouge_scores": {
-            "rouge1": 0.27118644067796605,
-            "rouge2": 0.0,
-            "rougeL": 0.10169491525423728,
-            "rougeLsum": 0.10169491525423728
-        }
-    },
-    {
-        "question": "What is the accuracy of data extraction achieved by the pipeline in the SHTI240567 study?",
-        "ground_truth": "The pipeline demonstrated an accuracy of up to 90% in data extraction.",
-        "expected_source": "N/A",
-        "retrieved_chunks": [
-            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
-            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1.",
-            "While each metric alone cannot provide a complete overview, all together they give a sense of performance of the system, with and without the availability of structured data. While the techniques explored in this paper address certain key limitations in current RAG pipelines, there are for other areas in which more could be done to improve performance.",
-            "3. Results We evaluated real life private datasets of 800 unstructured medical reports to assess effectiveness of the pipeline. Figure 1 displays initial results for weight and age. A : B. Figure 1. Residual analyses for weight (A) and age (B) extraction from German medical reports. Y-axis displays the expected values, and X-axis shows the automatically extracted information from the texts. 4.",
-            "In order to to achieve that goal, other techniques, perhaps those that require some additional training or fine tuning of some sorts can be utilized. 5 Impact In this experiment, we aim to address the key limitations of current RAG pipelines, some of these concerns have specific techniques to address them, while other are more difficult to resolve. As research in this field continues, more ideas will emerge to make these system more accurate and robust."
-        ],
-        "system_answer": "I cannot answer from the provided information. The context mentions an accuracy of up to 90% in data extraction, but it does not specify that this accuracy was achieved in a study called \"SHTI240567\".\n",
-        "rouge_scores": {
-            "rouge1": 0.4347826086956522,
-            "rouge2": 0.36363636363636365,
-            "rougeL": 0.4347826086956522,
-            "rougeLsum": 0.4347826086956522
-        }
-    },
-    {
-        "question": "What are the key stages of the data extraction pipeline described in the SHTI240567 paper?",
-        "ground_truth": "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use.",
-        "expected_source": "N/A",
-        "retrieved_chunks": [
-            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
-            "950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2. Methods Our method centers on a local deployed automated pipeline using different OSS-LLMs with RAG architecture to process German medical documents, extract and structure important data, and avoid external data transfer to ensure privacy.",
-            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
-            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst.",
-            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1."
-        ],
-        "system_answer": "The key stages of the data extraction pipeline are:\n\n1.  Inputs unstructured reports\n2.  Translates them from German to English using an OSS translation model\n3.  Uses RAG to identify and retrieve information\n4.  Converts these snippets into structured data for downstream use\n",
-        "rouge_scores": {
-            "rouge1": 0.8705882352941177,
-            "rouge2": 0.7228915662650603,
-            "rougeL": 0.8470588235294119,
-            "rougeLsum": 0.8470588235294119
-        }
-    },
-    {
-        "question": "What languages are involved in the data translation process of the SHTI240567 pipeline?",
-        "ground_truth": "The pipeline translates documents from German to English.",
-        "expected_source": "N/A",
-        "retrieved_chunks": [
-            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
-            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst.",
-            "950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2. Methods Our method centers on a local deployed automated pipeline using different OSS-LLMs with RAG architecture to process German medical documents, extract and structure important data, and avoid external data transfer to ensure privacy.",
-            "In the field of medical data analysis, converting unstructured text documents into a structured format suitable for further use is a significant challenge. This study introduces an automated local deployed data privacy secure pipeline that uses open-source Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) architecture to convert medical German language documents with sensitive health-related information into a structured format.",
+            "Also, extensive experiments conducted on the open DBQA data demonstrate that our model significantly improves the basic system and helps us get state-of-the-art results. Approach Overview We propose a human-like reading strategy to tackle the DBQA problem, which could be conducted via the neural network. In this section, we firstly make a formalized definition of DBQA; then we detail our reading strategy and explain why it is logical and reasonable in this problem.",
+            "Unified Model Based on the reading strategy of humans, we propose a unified model composed of the basic encoder, combined encoder and hierarchical encoder for the DBQA task, as shown in Figure 1. Let gq denotes the question, t denotes the summary of the document and s denotes a sentence in the document. Firstly, we use the basic encoder to get vectors (vf, uf, vt and v}, vi, v{,) respectively based on their word embeddings (wi, wi, wi and wi, wi, wi).",
+            "Our contributions in this paper can be summarized as follows: We propose a human-like reading strategy for DBQA task which is similar to the logic of students when they do the test of reading comprehension. Based on the reading strategy, we make a good combination of general understanding of both document and question.",
             "The unified model contains three major encoding layers that are consistent to different steps of the reading strategy, including the basic encoder, combined encoder and hierarchical encoder. We conduct extensive experiments on both the English WikiQA dataset and the Chinese dataset, and the experimental results show that our unified model is effective and yields state-of-the-art results on WikiQA dataset."
         ],
-        "system_answer": "The pipeline translates German to English.\n",
+        "system_answer": "The key contributions are: proposing a human-like reading strategy for the DBQA task, which is similar to the logic of students when they do the test of reading comprehension, and making a good combination of general understanding of both document and question based on the reading strategy.\n",
         "rouge_scores": {
-            "rouge1": 0.8571428571428571,
-            "rouge2": 0.6666666666666666,
-            "rougeL": 0.8571428571428571,
-            "rougeLsum": 0.8571428571428571
+            "rouge1": 0.7674418604651162,
+            "rouge2": 0.6904761904761905,
+            "rougeL": 0.7674418604651162,
+            "rougeLsum": 0.7674418604651162
+        }
+    },
+    {
+        "question": "What is the primary challenge in medical informatics that involves processing unstructured text data?",
+        "ground_truth": "In medical informatics, processing unstructured text data while ensuring data protection and confidentiality is a major challenge.",
+        "expected_source": "SHTI-316-SHTI240567.pdf",
+        "retrieved_chunks": [
+            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
+            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst.",
+            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1.",
+            "4. Discussion First results show that an automated pipeline can efficiently convert unstructured medical documents into structured data with up to 90% accuracy. This highlights the effectiveness of using OSS-LLMs with RAG for high accuracy data extraction while emphasizing strong data protection. Challenges such as improving the model's handling of various document formats and medical terms are part of future research. 5.",
+            "Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1. Introduction In medical informatics, processing unstructured text data while ensuring data protection and confidentiality is a major challenge [1]. This study introduces a solution using opensource Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) architecture [2] to efficiently transform this data into a structured format."
+        ],
+        "system_answer": "The primary challenge in medical informatics is processing unstructured text data while ensuring data protection and confidentiality.\n",
+        "rouge_scores": {
+            "rouge1": 0.8823529411764706,
+            "rouge2": 0.6875,
+            "rougeL": 0.7647058823529412,
+            "rougeLsum": 0.7647058823529412
+        }
+    },
+    {
+        "question": "What accuracy was achieved by the automated pipeline in data extraction from medical reports in the SHTI240567 study?",
+        "ground_truth": "The pipeline demonstrated an accuracy of up to 90% in data extraction.",
+        "expected_source": "SHTI-316-SHTI240567.pdf",
+        "retrieved_chunks": [
+            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1.",
+            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
+            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
+            "3. Results We evaluated real life private datasets of 800 unstructured medical reports to assess effectiveness of the pipeline. Figure 1 displays initial results for weight and age. A : B. Figure 1. Residual analyses for weight (A) and age (B) extraction from German medical reports. Y-axis displays the expected values, and X-axis shows the automatically extracted information from the texts. 4.",
+            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst."
+        ],
+        "system_answer": "The automated pipeline achieved an accuracy of up to 90% in data extraction from 800 unstructured original medical reports.\n",
+        "rouge_scores": {
+            "rouge1": 0.7096774193548387,
+            "rouge2": 0.5517241379310345,
+            "rougeL": 0.7096774193548387,
+            "rougeLsum": 0.7096774193548387
+        }
+    },
+    {
+        "question": "Describe the key stages of the data extraction pipeline for German medical documents.",
+        "ground_truth": "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use.",
+        "expected_source": "SHTI-316-SHTI240567.pdf",
+        "retrieved_chunks": [
+            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst.",
+            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
+            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
+            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1.",
+            "doi: 10.3233/SHT1240567 Optimizing Data Extraction: Harnessing RAG and LLMs for German Medical Documents Yingding WANG*, Simon LEUTNER’, Michael INGRISCH*, Christoph KLEIN*, Ludwig Christian HINSKE‘ and Katharina DANHAUSER*!"
+        ],
+        "system_answer": "The data extraction pipeline for German medical documents involves the following stages:\n\n1.  Inputs unstructured reports.\n2.  Translates them from German to English using an OSS translation model.\n3.  Uses RAG to identify and retrieve information.\n4.  Converts these snippets into structured data for downstream use.\n",
+        "rouge_scores": {
+            "rouge1": 0.8409090909090908,
+            "rouge2": 0.7209302325581395,
+            "rougeL": 0.8409090909090908,
+            "rougeLsum": 0.8409090909090908
+        }
+    },
+    {
+        "question": "What are the source and target languages for data translation in the medical data extraction pipeline?",
+        "ground_truth": "The pipeline translates documents from German to English.",
+        "expected_source": "SHTI-316-SHTI240567.pdf",
+        "retrieved_chunks": [
+            "The pipeline works in stages: 1) it inputs unstructured reports, 2) translates them from German to English using an OSS translation model, 3) uses RAG to identify and retrieve information, and 4) then converts these snippets into structured data for downstream use. To assess the accuracy of the data extraction process we compared the extracted data with manually extracted information by medical experts, which served as the ground truth. 3.",
+            "5. Conclusions The initial result indicates that the automated pipeline is efficient for converting unstructured medical data. By initially translating the text, the approach can be tailored to accommodate various languages, potentially broadening its applicability globally. References [1] Mohamed Yassine Landolsi, Lobna Hlaoua, and Lotfi Ben Romdhane. Information extraction from electronic medical documents: state of the art and future research directions. Knowl Inf Syst.",
+            "By evaluating the automated pipeline on numerous medical documents, we aim to showcase its effectiveness in extracting and structuring data, as a step forward in health informatics. ! Corresponding Author: Katharina Danhauser; E-mail: kdanhaus@med.Imu.de. 950 Y. Wang et al. / Optimizing Data Extraction: Harnessing RAG and LLMs 2.",
+            "Testing on a proprietary dataset of 800 unstructured original medical reports demonstrated an accuracy of up to 90% in data extraction of the pipeline compared to data extracted manually by physicians and medical students. This highlights the pipeline's potential as a valuable tool for efficiently extracting relevant data from unstructured sources. Keywords. OSS-LLM, Data extraction, RAG, German, Real-life medical reports 1.",
+            "In the field of medical data analysis, converting unstructured text documents into a structured format suitable for further use is a significant challenge. This study introduces an automated local deployed data privacy secure pipeline that uses open-source Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) architecture to convert medical German language documents with sensitive health-related information into a structured format."
+        ],
+        "system_answer": "The pipeline translates unstructured reports from German to English using an OSS translation model.\n",
+        "rouge_scores": {
+            "rouge1": 0.6363636363636364,
+            "rouge2": 0.5,
+            "rougeL": 0.6363636363636364,
+            "rougeLsum": 0.6363636363636364
         }
     },
     {
