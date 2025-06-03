@@ -13,17 +13,12 @@ import nltk
 # --- Document Ingestion & Preprocessing Module ---
 
 def extract_text_from_pdf(pdf_path):
-    try:
-        images = convert_from_path(pdf_path)
-        text = ''
-        for page in images:
-            text += pytesseract.image_to_string(page) + '\n'
-        return text
-    except Exception as e:
-        print(f"Error during OCR extraction of {pdf_path}: {e}")
-        print("Please ensure Tesseract and Poppler are installed and accessible in your PATH.")
-        print("For Windows, you might need to set pytesseract.pytesseract.tesseract_cmd manually.")
-        return ""
+
+    images = convert_from_path(pdf_path)
+    text = ''
+    for page in images:
+        text += pytesseract.image_to_string(page) + '\n'
+    return text
 
 
 def clean_text_from_ocr(ocr_text):
@@ -98,6 +93,7 @@ def chunk_plain_text(text_content, filename, max_chunk_tokens=500, chunk_overlap
         })
     return processed_chunks
 
+
 # --- Embedding & Indexing Module ---
 
 def create_vector_db(chunks_with_metadata, model):
@@ -105,14 +101,11 @@ def create_vector_db(chunks_with_metadata, model):
     client = chromadb.EphemeralClient()
     collection_name = "document_qa_collection"
 
-    try:
-        collection = client.get_or_create_collection(
-            name=collection_name,
-            metadata={"hnsw:space": "cosine"}
-        )
-    except Exception as e:
-        print(f"Error creating/getting collection: {e}")
-        return None
+    
+    collection = client.get_or_create_collection(
+        name=collection_name,
+        metadata={"hnsw:space": "cosine"}
+    )
 
     print(f"Embedding {len(chunks_with_metadata)} chunks...")
     
@@ -131,6 +124,7 @@ def create_vector_db(chunks_with_metadata, model):
     )
     print("ChromaDB populated.")
     return collection
+
 
 # --- Retrieval Module ---
 
@@ -170,42 +164,39 @@ def retrieve_context(query, collection, embedding_model, top_k=5):
 
     return final_retrieved_chunks_for_llm
 
+
 # --- Generation Module ---
 
 def generate_answer_with_llm(query, context_chunks):
 
-    if not context_chunks:
-        return "I could not find relevant information in the document to answer your question."
-
     context = "\n\n".join(context_chunks)
 
-    try:
-        client = genai.Client(api_key="AIzaSyDndFoAs7-U_1koyw-nYsnnKM9t9wotGdI")
-        prompt = (
-            f"You are an expert research assistant specialized in extracting precise information from provided documents. "
-            f"Your primary goal is to answer the user's QUESTION based **STRICTLY AND ONLY** on the CONTEXT provided. "
-            f"Adhere to the context faithfully; **DO NOT** use any outside knowledge or prior training data. "
-            f"If the answer is not explicitly present or cannot be directly inferred from the CONTEXT, you **MUST** state 'I cannot answer from the provided information.'\n\n"
+    
+    client = genai.Client(api_key="AIzaSyDndFoAs7-U_1koyw-nYsnnKM9t9wotGdI")
+    prompt = (
+        f"You are an expert research assistant specialized in extracting precise information from provided documents. "
+        f"Your primary goal is to answer the user's QUESTION based **STRICTLY AND ONLY** on the CONTEXT provided. "
+        f"Adhere to the context faithfully; **DO NOT** use any outside knowledge or prior training data. "
+        f"If the answer is not explicitly present or cannot be directly inferred from the CONTEXT, you **MUST** state 'I cannot answer from the provided information.'\n\n"
 
-            f"CONTEXT:\n{context}\n\n"
-            f"QUESTION: {query}\n\n"
-            
-            f"GUIDELINES FOR ANSWERING:\n"
-            f"- Be concise but comprehensive. Provide all relevant details from the context."
-            f"- If the question asks for a list, steps, or stages, provide them in a clear, numbered list format."
-            f"- Avoid conversational filler or apologies; go straight to the answer."
-            f"- If the context contains multiple possible answers or interpretations for the question (e.g., different types of disadvantages), prioritize the most direct and specific one mentioned in the context, or list all relevant ones if that's what the question implies."
-            f"- If numerical values are requested, provide the exact numbers from the text."
-            f"\nANSWER:"
+        f"CONTEXT:\n{context}\n\n"
+        f"QUESTION: {query}\n\n"
+        
+        f"GUIDELINES FOR ANSWERING:\n"
+        f"- Be concise but comprehensive. Provide all relevant details from the context."
+        f"- If the question asks for a list, steps, or stages, provide them in a clear, numbered list format."
+        f"- Avoid conversational filler or apologies; go straight to the answer."
+        f"- If the context contains multiple possible answers or interpretations for the question (e.g., different types of disadvantages), prioritize the most direct and specific one mentioned in the context, or list all relevant ones if that's what the question implies."
+        f"- If numerical values are requested, provide the exact numbers from the text."
+        f"\nANSWER:"
 
-        )
+    )
 
-        response = client.models.generate_content(
-            model="gemini-2.0-flash", contents=prompt
-        )
-        return response.text
-    except Exception as e:
-        return f"Error calling LLM: {e}"
+    response = client.models.generate_content(
+        model="gemini-2.0-flash", contents=prompt
+    )
+    return response.text
+
     
 
 
@@ -344,10 +335,6 @@ if __name__ == "__main__":
     embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
     documents_directory = "sample_data"
-    
-    if not os.path.exists(documents_directory):
-        print(f"Error: Directory '{documents_directory}' not found. Please create it and place your PDFs inside.")
-        exit()
 
     all_processed_chunks_for_db = []
     
@@ -376,9 +363,6 @@ if __name__ == "__main__":
     print(f"\nTotal documents processed. Accumulated {len(all_processed_chunks_for_db)} chunks from all PDFs.")
 
     db_collection = create_vector_db(all_processed_chunks_for_db, embedding_model)
-    if db_collection is None:
-        print("Failed to create vector database. Exiting.")
-        exit()
 
     evaluation_results = evaluate_system(
         qa_pairs=sample_qa_dataset,
