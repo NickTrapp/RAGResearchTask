@@ -67,11 +67,11 @@ python multi-doc.py
 
 The system will process all PDFs in the sample\_data directory, create a vector store, run the evaluation on a pre-defined dataset, and save the results to evaluation\_results.json.
 
-## **📈 Evaluation & Performance**
+## **Evaluation & Performance**
 
 A key part of this project was designing a method to measure the system's performance objectively. The included evaluation script runs the system on a pre-defined set of questions and compares the generated answers to a set of ground truth answers. The script outputs a JSON file with the results, including ROUGE scores, for each question.
 
-## **📄 Evaluation Data**
+## **Evaluation Data**
 
 The sample\_data directory contains the following academic papers that were used for evaluation:
 
@@ -90,6 +90,3 @@ The following papers and resources were used as a basis for this project:
 * **pdf2image and pytesseract documentation.**  
 * **google.generativeai library documentation.**
 
-## **📄 License**
-
-This project is licensed under the MIT License.
