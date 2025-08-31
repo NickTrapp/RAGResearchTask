@@ -48,23 +48,29 @@ The system is a modular RAG pipeline built with standard, open-source libraries.
 
 ### **Installation**
 
-1. Clone the repository:  
+1. Clone the repository:
+   ```
    git clone \[https://github.com/your-username/your-repo-name.git\](https://github.com/your-username/your-repo-name.git)  
    cd your-repo-name
+   ```
 
-2. Install the required dependencies:  
+2. Install the required dependencies:
+   ```
    pip install \-r requirements.txt
-
-   (Note: You will need to create a requirements.txt file by running pip freeze \> requirements.txt after installing the dependencies.)  
-3. Download NLTK data:  
+   ```
+   (Note: You will need to create a requirements.txt file by running pip freeze \> requirements.txt after installing the dependencies.)
+   
+4. Download NLTK data:
+   ``` 
    python \-c "import nltk; nltk.download('punkt')"
+   ```
 
 ### **Usage**
 
 Run the main script from your terminal:
-
+```
 python multi-doc.py
-
+```
 The system will process all PDFs in the sample\_data directory, create a vector store, run the evaluation on a pre-defined dataset, and save the results to evaluation\_results.json.
 
 ## **Evaluation & Performance**
